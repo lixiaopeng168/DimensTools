@@ -1,0 +1,2 @@
+rootProject.name='CreateDimensHelp'
+include ':app'
