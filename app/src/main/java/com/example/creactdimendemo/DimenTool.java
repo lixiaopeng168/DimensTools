@@ -48,6 +48,7 @@ public class DimenTool {
         StringBuilder w1024 = new StringBuilder();
         StringBuilder w1280 = new StringBuilder();
         StringBuilder w1365 = new StringBuilder();
+        
 
         try {
             System.out.println("生成不同分辨率：");
