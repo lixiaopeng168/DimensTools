@@ -7,7 +7,9 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
 /**
@@ -48,7 +50,7 @@ public class DimenTool {
         StringBuilder w1024 = new StringBuilder();
         StringBuilder w1280 = new StringBuilder();
         StringBuilder w1365 = new StringBuilder();
-        
+
 
         try {
             System.out.println("生成不同分辨率：");
@@ -222,11 +224,14 @@ public class DimenTool {
      * 四舍五入
      */
     public static String keepDecimal(double r) {
-        NumberFormat nf = NumberFormat.getNumberInstance();
-        nf.setMaximumFractionDigits(4);
-// 如果不需要四舍五入，可以使用RoundingMode.DOWN
-        nf.setRoundingMode(RoundingMode.UP);
-        return nf.format(r);
+//        NumberFormat nf = NumberFormat.getNumberInstance();
+//        nf.setMaximumFractionDigits(4);
+//// 如果不需要四舍五入，可以使用RoundingMode.DOWN
+//        nf.setRoundingMode(RoundingMode.UP);
+        DecimalFormat df = new DecimalFormat("0.0000");
+        df.setRoundingMode(RoundingMode.HALF_UP);
+        return df.format(r);
+
     }
 
     /**
